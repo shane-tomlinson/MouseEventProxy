@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mouse Event Proxy Unit Tests</title>
+        <script type="text/javascript" src="lib/jquery-1.4.4.min.js" ></script>
+
+        <script type="text/javascript" src="lib/jasmine.js"></script>
+        <script type="text/javascript" src="lib/jasmine-html.js"></script>
+        
+        <!-- source files here -->
+        <script type="text/javascript" src="../src/mouseEventProxy.js"></script>
+        
+
+        <link rel="stylesheet" type="text/css" href="lib/jasmine.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/test.css">
+
+    </head>
+    
+    <body>
+    
+        <div id="top">Top</div>
+        
+        <div id="bottom">Bottom<div id="inner">inner</div></div>
+        
+        <div id="other">Other</div>
+        
+        <!-- need top and bottom to exist before running spec -->
+        <script type="text/javascript" src="spec/mouseEventProxy_spec.js"></script>
+
+        <script type="text/javascript">
+          jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+          jasmine.getEnv().execute();
+        </script>
+
+    </body>
+    
+    
+</html>
