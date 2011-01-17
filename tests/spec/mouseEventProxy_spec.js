@@ -122,6 +122,10 @@ describe( "MouseEventProxy", function() {
         expect( otherMouseOut ).toBe( true );
     } );
     
+    it( 'provides the jQuery plugin', function() {
+        expect( typeof( $.fn.proxyMouseEvents ) == 'function' ).toBe( true );
+    } );
+    
     
     function sendEvent( target, eventName, loc ) {
         var event = new jQuery.Event( eventName );

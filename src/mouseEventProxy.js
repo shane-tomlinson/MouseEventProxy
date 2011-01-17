@@ -4,9 +4,10 @@
 * http://creativecommons.org/licenses/by/3.0/
 *
 * Written by Shane Tomlinson, 2011
-* set117@yahoo.com
-* www.shanetomlinson.com
-* www.aframejs.com
+* email: set117@yahoo.com
+* Twitter: @shane_tomlinson 
+* http://www.shanetomlinson.com
+* http://www.aframejs.com
 */
 
 /**
@@ -142,8 +143,6 @@ window.MouseEventProxy = (function() {
             return newEvent;
         }
     };
-    
-    return Proxy;
     
     /**
     * a jQuery plugin to proxy mouse events from one DOM element to another
