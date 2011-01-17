@@ -50,7 +50,12 @@ window.MouseEventProxy = (function() {
             this.target = $( config.target );
             
             if( config.proxyTo ) {
-                this.proxyTarget = $( config.proxyTo );
+                if( config.proxyTo == 'parent' ) {
+                    this.proxyTarget = this.target.parent();
+                }
+                else {
+                    this.proxyTarget = $( config.proxyTo );
+                }
             }
             
             this.handler = function( event ) {

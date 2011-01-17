@@ -122,6 +122,24 @@ describe( "MouseEventProxy", function() {
         expect( otherMouseOut ).toBe( true );
     } );
     
+    it( 'can proxy to the parent', function() {
+        proxy = new MouseEventProxy();
+        proxy.init( {
+            target: top,
+            events: [ 'mouseout' ],
+            proxyTo: 'parent'
+        } );
+        
+        var parentMouseOut = false;
+        top.parent().bind( 'mouseout', function() {
+            parentMouseOut = true;
+        } );
+        
+        sendEvent( top, 'mouseout' );
+        
+        expect( parentMouseOut ).toBe( true );
+    } );
+
     it( 'provides the jQuery plugin', function() {
         expect( typeof( $.fn.proxyMouseEvents ) == 'function' ).toBe( true );
     } );
